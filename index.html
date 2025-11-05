@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Presupuesto Mensual</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="budget-calculator">
+    <h1>Calculadora de Presupuesto Mensual</h1>
+    <p>¿Sabes en qué se te va el dinero de la nómina? …</p>
+
+    <form id="budgetForm">
+      <fieldset>
+        <legend>Ingresos</legend>
+        <label for="salario">Salario mensual neto</label>
+        <input type="number" id="salario" name="salario" placeholder="$/mes" min="0" step="any" required>
+        <label for="ingresosAdicionales">Ingresos adicionales</label>
+        <input type="number" id="ingresosAdicionales" name="ingresosAdicionales" placeholder="$/mes" min="0" step="any">
+      </fieldset>
+
+      <fieldset>
+        <legend>Gastos Hogar</legend>
+        <label for="hipotecaAlquiler">Hipoteca/Alquiler</label>
+        <input type="number" id="hipotecaAlquiler" name="hipotecaAlquiler" placeholder="$/mes" min="0" step="any">
+        <label for="seguroHogar">Seguro del hogar</label>
+        <input type="number" id="seguroHogar" name="seguroHogar" placeholder="$/mes" min="0" step="any">
+        <label for="mantenimientoCasa">Mantenimiento de la casa</label>
+        <input type="number" id="mantenimientoCasa" name="mantenimientoCasa" placeholder="$/mes" min="0" step="any">
+        <label for="suministrosCasa">Suministros de la casa</label>
+        <input type="number" id="suministrosCasa" name="suministrosCasa" placeholder="$/mes" min="0" step="any">
+        <label for="internet">Internet</label>
+        <input type="number" id="internet" name="internet" placeholder="$/mes" min="0" step="any">
+        <label for="telefono">Teléfono</label>
+        <input type="number" id="telefono" name="telefono" placeholder="$/mes" min="0" step="any">
+        <label for="comida">Comida</label>
+        <input type="number" id="comida" name="comida" placeholder="$/mes" min="0" step="any">
+      </fieldset>
+
+      <fieldset>
+        <legend>Gastos Transporte</legend>
+        <label for="coche">Coche</label>
+        <input type="number" id="coche" name="coche" placeholder="$/mes" min="0" step="any">
+        <label for="seguroCoche">Seguro del coche</label>
+        <input type="number" id="seguroCoche" name="seguroCoche" placeholder="$/mes" min="0" step="any">
+        <label for="mantenimientoCoche">Mantenimiento del coche</label>
+        <input type="number" id="mantenimientoCoche" name="mantenimientoCoche" placeholder="$/mes" min="0" step="any">
+        <label for="combustible">Combustible</label>
+        <input type="number" id="combustible" name="combustible" placeholder="$/mes" min="0" step="any">
+        <label for="transportePublico">Transporte público</label>
+        <input type="number" id="transportePublico" name="transportePublico" placeholder="$/mes" min="0" step="any">
+        <label for="taxiUber">Taxi / Uber</label>
+        <input type="number" id="taxiUber" name="taxiUber" placeholder="$/mes" min="0" step="any">
+      </fieldset>
+
+      <fieldset>
+        <legend>Gastos Educación</legend>
+        <label for="colegioMaster">Colegio / Máster / Formación</label>
+        <input type="number" id="colegioMaster" name="colegioMaster" placeholder="$/mes" min="0" step="any">
+        <label for="extraescolares">Extraescolares</label>
+        <input type="number" id="extraescolares" name="extraescolares" placeholder="$/mes" min="0" step="any">
+        <label for="materialEscolar">Material escolar / formación</label>
+        <input type="number" id="materialEscolar" name="materialEscolar" placeholder="$/mes" min="0" step="any">
+      </fieldset>
+
+      <fieldset>
+        <legend>Otros gastos</legend>
+        <label for="ocio">Ocio / cenar / amigos</label>
+        <input type="number" id="ocio" name="ocio" placeholder="$/mes" min="0" step="any">
+        <label for="vacaciones">Vacaciones</label>
+        <input type="number" id="vacaciones" name="vacaciones" placeholder="$/mes" min="0" step="any">
+        <label for="medico">Médico</label>
+        <input type="number" id="medico" name="medico" placeholder="$/mes" min="0" step="any">
+        <label for="mascotas">Mascotas</label>
+        <input type="number" id="mascotas" name="mascotas" placeholder="$/mes" min="0" step="any">
+        <label for="otrosGastos">Otros</label>
+        <input type="number" id="otrosGastos" name="otrosGastos" placeholder="$/mes" min="0" step="any">
+      </fieldset>
+
+      <fieldset>
+        <legend>Ahorro / Inversión</legend>
+        <label for="ahorro">Ahorro</label>
+        <input type="number" id="ahorro" name="ahorro" placeholder="$/mes" min="0" step="any">
+        <label for="inversion">Inversión</label>
+        <input type="number" id="inversion" name="inversion" placeholder="$/mes" min="0" step="any">
+      </fieldset>
+
+      <button type="button" id="calculateBtn">Calcular resultados</button>
+    </form>
+
+    <div id="results">
+      <h2>Resultados</h2>
+      <p>Balance a final de mes: <span id="balance">0$</span></p>
+      <p>Ingresos totales: <span id="totalIngresos">0$</span></p>
+      <p>Gastos totales: <span id="totalGastos">0$</span></p>
+      <p>Gastos del hogar: <span id="gastosHogarVal">0$</span> (<span id="gastosHogarPct">0%</span>)</p>
+      <p>Gastos transporte: <span id="gastosTransporteVal">0$</span> (<span id="gastosTransportePct">0%</span>)</p>
+      <p>Gastos educación: <span id="gastosEducacionVal">0$</span> (<span id="gastosEducacionPct">0%</span>)</p>
+      <p>Otros gastos: <span id="otrosGastosVal">0$</span> (<span id="otrosGastosPct">0%</span>)</p>
+      <p>Ahorro / Inversión: <span id="ahorroVal">0$</span> (<span id="ahorroPct">0%</span>)</p>
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

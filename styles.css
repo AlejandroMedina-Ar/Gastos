@@ -1,0 +1,67 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.4;
+  padding: 20px;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.budget-calculator {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.budget-calculator h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.budget-calculator form fieldset {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.budget-calculator form label {
+  display: block;
+  margin-top: 10px;
+}
+
+.budget-calculator form input[type=number] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+.budget-calculator button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.budget-calculator button:hover {
+  background: #0056b3;
+}
+
+#results {
+  margin-top: 30px;
+  background: #f0f8ff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+#results p {
+  font-size: 1.1em;
+  margin: 8px 0;
+}
